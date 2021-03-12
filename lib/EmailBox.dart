@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:mvvm_example/SubscriptionViewModel.dart';
+import 'SubscriptionViewModelImpl.dart';
 
 import 'MyTextField.dart';
 import 'SecondPage.dart';
 import 'SubmitButton.dart';
-import 'SubscriptionViewModelImpl.dart';
 
 class EmailBox extends StatefulWidget {
   final TextEditingController controller;
+  final void Function() nextPage;
 
-  const EmailBox({Key key, this.controller}) : super(key: key);
+  const EmailBox({Key key, this.controller, this.nextPage}) : super(key: key);
   @override
   _EmailBoxState createState() => _EmailBoxState();
 }
@@ -17,10 +18,7 @@ class EmailBox extends StatefulWidget {
 class _EmailBoxState extends State<EmailBox> {
   SubscriptionViewModel _viewModel = SubscriptionViewModelImpl();
 
-  void nextPage() {
-    Navigator.of(context).push(MaterialPageRoute(
-        builder: (context) => SecondPage(text: widget.controller.text)));
-  }
+
 
   @override
   void initState() {
@@ -51,7 +49,7 @@ class _EmailBoxState extends State<EmailBox> {
               stream: _viewModel.outputIsButtonEnabled,
               builder: (context, snapshot) {
                 return SubmitButton(
-                    enabled: snapshot.data ?? false, nextStep: nextPage);
+                    enabled: snapshot.data ?? false, nextStep: widget.nextPage);
               }),
         ],
       ),
