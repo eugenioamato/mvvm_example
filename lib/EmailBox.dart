@@ -3,7 +3,6 @@ import 'package:mvvm_example/SubscriptionViewModel.dart';
 import 'SubscriptionViewModelImpl.dart';
 
 import 'MyTextField.dart';
-import 'SecondPage.dart';
 import 'SubmitButton.dart';
 
 class EmailBox extends StatefulWidget {
