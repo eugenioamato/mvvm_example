@@ -27,4 +27,4 @@ MyTextField.dart : It's the Ui component containing the textField and the error 
 SubmitButton.dart : It's the Ui component containing the ElevatedButton. It can be shown as disabled when we select a null function for its onPress activity. Otherwise, the activity that is fired is the NextStep function, that we provide when creating the EmailBox.  
 
 ## Compatibility
-This projects compiles correctly to Android, iOs, macOs, and web.
+This projects compiles correctly to Android, iOs, macOs (BigSur), Windows10(build 1909) and Web (Chrome 89.0.4389.82 and Edge 89.0.774.50).
