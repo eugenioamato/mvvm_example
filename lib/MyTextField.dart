@@ -5,7 +5,7 @@ class MyTextField extends StatefulWidget {
   final String hintText;
   final String errorText;
 
-  const MyTextField({Key key, this.controller, this.hintText, this.errorText})
+  const MyTextField({Key? key, required this.controller, required this.hintText, required this.errorText})
       : super(key: key);
 
   @override

@@ -5,7 +5,7 @@ class SubmitButton extends StatefulWidget {
   final bool enabled;
   final Function() nextStep;
 
-  const SubmitButton({Key key, this.enabled, this.nextStep}) : super(key: key);
+  const SubmitButton({Key? key, required this.enabled, required this.nextStep}) : super(key: key);
 
   @override
   _SubmitButtonState createState() => _SubmitButtonState();

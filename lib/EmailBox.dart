@@ -9,7 +9,7 @@ class EmailBox extends StatefulWidget {
   final TextEditingController controller;
   final void Function() nextPage;
 
-  const EmailBox({Key key, this.controller, this.nextPage}) : super(key: key);
+  const EmailBox({Key? key, required this.controller, required this.nextPage}) : super(key: key);
   @override
   _EmailBoxState createState() => _EmailBoxState();
 }
@@ -48,7 +48,7 @@ class _EmailBoxState extends State<EmailBox> {
               stream: _viewModel.outputIsButtonEnabled,
               builder: (context, snapshot) {
                 return SubmitButton(
-                    enabled: snapshot.data ?? false, nextStep: widget.nextPage);
+                    enabled: ((snapshot.data ?? false) as bool) , nextStep: widget.nextPage);
               }),
         ],
       ),
