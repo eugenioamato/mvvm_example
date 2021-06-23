@@ -17,12 +17,9 @@ class EmailBox extends StatefulWidget {
 class _EmailBoxState extends State<EmailBox> {
   SubscriptionViewModel _viewModel = SubscriptionViewModelImpl();
 
-
-
   @override
   void initState() {
-    widget.controller.addListener(
-        () => _viewModel.inputMailText.add(widget.controller.text));
+    widget.controller.addListener(() => _viewModel.inputMailText.add(widget.controller.text));
     super.initState();
   }
 
@@ -37,18 +34,14 @@ class _EmailBoxState extends State<EmailBox> {
             child: StreamBuilder<String>(
               stream: _viewModel.outputErrorText,
               builder: (context, snapshot) {
-                return MyTextField(
-                    controller: widget.controller,
-                    hintText: "Email",
-                    errorText: snapshot.data ?? '');
+                return MyTextField(controller: widget.controller, hintText: "Email", errorText: snapshot.data ?? '');
               },
             ),
           ),
           StreamBuilder(
               stream: _viewModel.outputIsButtonEnabled,
               builder: (context, snapshot) {
-                return SubmitButton(
-                    enabled: ((snapshot.data ?? false) as bool) , nextStep: widget.nextPage);
+                return SubmitButton(enabled: ((snapshot.data ?? false) as bool), nextStep: widget.nextPage);
               }),
         ],
       ),

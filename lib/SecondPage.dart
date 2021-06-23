@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class SecondPage extends StatefulWidget {
   final String text;
 
-  const SecondPage({Key? key,required this.text}) : super(key: key);
+  const SecondPage({Key? key, required this.text}) : super(key: key);
 
   @override
   _SecondPageState createState() => _SecondPageState();
@@ -28,9 +28,7 @@ class _SecondPageState extends State<SecondPage> {
               ),
               Flexible(
                 flex: 1,
-                child: ElevatedButton(
-                    onPressed: () => Navigator.of(context).pop(),
-                    child: Text('Back')),
+                child: ElevatedButton(onPressed: () => Navigator.of(context).pop(), child: Text('Back')),
               ),
               Spacer()
             ],

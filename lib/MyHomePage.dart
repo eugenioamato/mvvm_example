@@ -19,9 +19,9 @@ class _MyHomePageState extends State<MyHomePage> {
     controller.dispose();
     super.dispose();
   }
+
   void nextPage() {
-    Navigator.of(context).push(MaterialPageRoute(
-        builder: (context) => SecondPage(text: controller.text)));
+    Navigator.of(context).push(MaterialPageRoute(builder: (context) => SecondPage(text: controller.text)));
   }
 
   @override
@@ -33,10 +33,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Center(
-          child: EmailBox(
-            controller: controller,
-            nextPage:nextPage
-          ),
+          child: EmailBox(controller: controller, nextPage: nextPage),
         ),
       ),
     );
